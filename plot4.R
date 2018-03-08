@@ -66,16 +66,16 @@ cdf$DateTime <- strptime(cdf$DateTime, "%d/%m/%Y %H:%M:%S")
 
 par(mfrow=c(2,2))
 #top left plot  
-plot( cdf$DateTime, cdf$Global_active_power ,type="l", ylab="Global Active Power (kilowatts)", xlab="")
+plot( cdf$DateTime, cdf$Global_active_power ,type="l", ylab="Global Active Power", xlab="")
 
 #top right plot
-plot( cdf$DateTime, cdf$Voltage ,type="l", ylab="Voltage (Volts)", xlab="datetime")
+plot( cdf$DateTime, cdf$Voltage ,type="l", ylab="Voltage", xlab="datetime")
 
 #bottom left plot
 plot(cdf$DateTime,cdf$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
 lines(cdf$DateTime,cdf$Sub_metering_2,col="red")
 lines(cdf$DateTime,cdf$Sub_metering_3,col="blue")
-legend(x="topright", y = "topright", col=c("black","red","blue"), c("Sub_metering_1  ","Sub_metering_2  ", "Sub_metering_3  "),lwd=1, y.intersp=0.2, xjust=1, cex=0.8, bty = "n")
+legend(x="topright", y = "topright", col=c("black","red","blue"), c("Sub_metering_1  ","Sub_metering_2  ", "Sub_metering_3  "),lwd=1, y.intersp=0.2, xjust=1, cex=0.7, bty = "n")
 
 #bottom right plot
 plot( cdf$DateTime, cdf$Global_reactive_power ,type="l", ylab="Global_reactive_power", xlab="datetime")
