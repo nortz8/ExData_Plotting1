@@ -69,18 +69,16 @@ par(mfrow=c(2,2))
 plot( cdf$DateTime, cdf$Global_active_power ,type="l", ylab="Global Active Power (kilowatts)", xlab="")
 
 #top right plot
-plot( cdf$DateTime, cdf$Voltage ,type="l", ylab="Voltage (Volts)", xlab="")
+plot( cdf$DateTime, cdf$Voltage ,type="l", ylab="Voltage (Volts)", xlab="datetime")
 
 #bottom left plot
 plot(cdf$DateTime,cdf$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
 lines(cdf$DateTime,cdf$Sub_metering_2,col="red")
 lines(cdf$DateTime,cdf$Sub_metering_3,col="blue")
-legend("topright", col=c("black", "red", "blue"), lty=1, lwd=1, bty="n",cex=0.35,
-legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-
+legend(x="topright", y = "topright", col=c("black","red","blue"), c("Sub_metering_1  ","Sub_metering_2  ", "Sub_metering_3  "),lwd=1, y.intersp=0.2, xjust=1, cex=0.8, bty = "n")
 
 #bottom right plot
-plot( cdf$DateTime, cdf$Global_reactive_power ,type="l", ylab="Global Reactive Power (kilowatts)", xlab="")
+plot( cdf$DateTime, cdf$Global_reactive_power ,type="l", ylab="Global_reactive_power", xlab="datetime")
 
 dev.copy(png, file="plot4.png", width=480, height=480)
 dev.off()
